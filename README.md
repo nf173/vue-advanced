@@ -22,10 +22,10 @@
 
 **MVVM，全称 Model View ViewModel，本质上是 MVC 架构的改进版。**
 
-随着业务需求的增加，程序越来越复杂，如果把 ```View``` 和 ```Model``` 对应的控制关系全部扔到 ```Controller``` 中，那么 ```Controller``` 将会变得非常庞大臃肿，好像盘互交错的树根。
+随着业务需求的增加，程序越来越复杂，如果把 `View` 和 `Model` 对应的控制关系全部扔到 `Controller` 中，那么 `Controller` 将会变得非常庞大臃肿，好像盘互交错的树根。
 而 MVVM 架构的出现很好地解决了上述的问题。
 
-MVVM 分离了视图层和数据层，```View``` 和 ```Model``` 不能直接通信，而必须通过 ```ViewModel``` 才能进行交互，当用户操作视图，```ViewModel``` 自动感知变化，然后通知 ```Model``` 作出相应改变，而当```Model```变化时，```ViewModel``` 同样能感知到，并使视图更新，这就是所谓的**双向绑定**。
+MVVM 分离了视图层和数据层 `Vie` 和 `Model` 不能直接通信，而必须通过 `ViewModel` 才能进行交互，当用户操作视图，`ViewModel` 自动感知变化，然后通知 `Model` 作出改变数据，而当数据变化时，`ViewModel` 同样能感知到，并使视图更新，这就是所谓的 **<a href="#?id=什么是数据响应式">双向绑定</a>**。
 
 优点：MVVM 的响应式架构简化了原本繁琐的 dom 操作，提高了页面渲染性能。视图和数据自动同步，易于维护复杂变化的数据状态。
 
@@ -33,6 +33,27 @@ MVVM 分离了视图层和数据层，```View``` 和 ```Model``` 不能直接通
 
 可以把 ViewModel 看作是对 Controller 的封装， -->
 
-<!-- # 2、如何理解响应式数据原理？
+# 2、如何理解响应式数据原理？
 
-> 利用 Object.defineProperty() 劫持数据，实现数据响应。 -->
+> 利用 Object.defineProperty() 劫持数据，实现数据响应。
+
+## 什么是数据响应式
+
+**数据响应式，即 数据双向绑定。改变 Model 时，View 自动更新。改变 View 时，Model 也会自动更新。**
+
+要实现数据双向绑定，需要先理解两个概念:
+
+- [Object.defineProperty()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+- [观察者模式](https://www.runoob.com/design-pattern/observer-pattern.html)
+
+
+### Object.defineProperty()
+
+Object.defineProperty() 是ES5中的方法，它的作用就是直接在一个对象上定义一个新属性，或者修改一个已经存在的属性。
+
+该方法接收三个参数：`属性所在对象`、`属性名`、`描述符对象`。
+
+其中，描述符(descriptor)对象的属性必须是 `configurable`、`enumerable`、`writable`、`value` 中的一个或多个值。用于修改对应的特性值。
+
+
+
