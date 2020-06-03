@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'texgyreadventor';
+  src: url('../fonts/texgyreadventor-regular.otf');
+}
+
+@font-face {
+  font-family: 'josefin-sans';
+  src: url('../fonts/Josefin-Sans-Light.ttf');
+}
+
+body, html {
+  -webkit-font-smoothing: antialiased;
+  color: #34495e;
+  font-family: 'texgyreadventor', Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+}
