@@ -33,6 +33,6 @@ MVVM 分离了视图层和数据层，```View``` 和 ```Model``` 不能直接通
 
 可以把 ViewModel 看作是对 Controller 的封装， -->
 
-# 2、如何理解响应式数据原理？
+<!-- # 2、如何理解响应式数据原理？
 
-> 利用 Object.defineProperty() 劫持数据，实现数据响应。
+> 利用 Object.defineProperty() 劫持数据，实现数据响应。 -->
