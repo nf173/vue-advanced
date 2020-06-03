@@ -18,8 +18,18 @@
       name: '<b>Vue面试进阶</b>',
       repo: 'https://github.com/nf173/vue-advanced.git',
       themeColor: '#f0932b',
+      coverpage: true,
+      search: {
+        maxAge: 86400000,               
+        paths: ['/'],
+        placeholder: 'Type to search',
+        noData: 'No Results!',
+        depth: 2,
+        hideOtherSidebarContent: true
+      }
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>
