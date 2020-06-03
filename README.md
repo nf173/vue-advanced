@@ -49,11 +49,39 @@ MVVM 分离了视图层和数据层 `Vie` 和 `Model` 不能直接通信，而�
 
 ### Object.defineProperty()
 
-Object.defineProperty() 是ES5中的方法，它的作用就是直接在一个对象上定义一个新属性，或者修改一个已经存在的属性。
+**Object.defineProperty() 是 ES5 中的方法，作用是在一个对象上定义一个新属性，或者修改一个已经存在的属性。**
 
 该方法接收三个参数：`属性所在对象`、`属性名`、`描述符对象`。
 
-其中，描述符(descriptor)对象的属性必须是 `configurable`、`enumerable`、`writable`、`value` 中的一个或多个值。用于修改对应的特性值。
+ECMAScript 中对象有两种属性，分别是：**数据属性** 和 **访问器属性**。其中，访问器属性必须通过 Object.defineProperty() 才能定义。
+
+访问器属性不包含数据值，它们包含一对 `getter` 和 `setter` 函数(非必须)。读取访问器属性时，会调用 `getter` 函数，负责返回有效的值；写入访问器属性时，会调用 `setter` 函数并传入新值，负责决定如何处理数据。
+
+``` js
+var people = {
+  name: 'nanfs',
+  _age: 20
+}
+
+// 访问器属性必须使用 Object.defineProperty() 定义。
+Object.defineProperty(people, age, {
+  get() {
+    return this._age;
+  },
+  set() {
+    this._age++;
+  }
+})
+
+people.age = 10;
+console.log(people.age);  // 11
+```
+
+<!-- ### 观察者模式 -->
+
+
+
+
 
 
 
