@@ -12,7 +12,9 @@
 </head>
 <body>
   <div data-app id="app">Please wait...</div>
+  <!-- <div id="vcomments"></div> -->
   <script>
+    /* docs 模板 */
     window.$docsify = {
       el: '#app',
       name: '<b>Vue面试进阶</b>',
@@ -31,5 +33,17 @@
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script>
+    /* Valine 评论系统 */
+    new Valine({
+      el: '#vcomments',
+      appId: 'l5TDKeuq7rbbuvmb4T8eSgnf-gzGzoHsz',
+      appKey: 'AKIqkjEqszI6s7QLyK348HJ6',
+      placeholder: 'say something...',
+      visitor: true,
+      enableQQ: true
+    })
+  </script> -->
 </body>
 </html>
