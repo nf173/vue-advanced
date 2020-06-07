@@ -115,6 +115,35 @@ nextTick() 作用是在 dom 更新完成后执行一次回调。其原理是**�
 
 `el` 被新创建的 `vm.$el` 替换。此时可通过 dom API 获取 dom 节点，`$ref` 属性可访问。
 
+## beforeUpdate
+
+组件和 dom 修改、重新渲染之前调用。
+
+## updated
+
+组件和 dom 更新后调用。
+
+## beforeDestroy
+
+组件被摧毁前调用，可在此时解绑自定义事件。
+
+## destroyed
+
+组件被摧毁后调用，
+
+# 7、Ajax 请求放在哪个生命周期中？
+
+一般放在 mounted 钩子中，如不需要操作 dom，可在 created 中请求数据。
+
+*注意：服务端渲染不支持 mounted 钩子，统一在 created 发送网络请求。*
+
+
+# 8、Vue 父子组件生命周期调用顺序？
+
+父组件 `beforeCreate` => 父组件 `created` => 子组件 `beforeCreate` => 子组件 `created` => 子组件 `beforeMounte` => 子组件 `mounted` => 父组件 `beforeMounte` => 父组件 `mounted`
+
+
+
 # 🏗️ 板块更新
 
 建设中...
